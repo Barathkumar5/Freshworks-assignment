@@ -16,7 +16,7 @@ class myThreadcreate (threading.Thread):
       self.valuejson = json.loads(valuejson)
       self.timeout=timeout
    def run(self):
-     threadLock.acquire(1)
+     threadLock.acquire(1) ####Thread safe#####
      c(self.key,self.valuejson,self.timeout) 
      threadLock.release()
 
